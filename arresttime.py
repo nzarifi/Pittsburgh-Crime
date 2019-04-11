@@ -147,7 +147,7 @@ df2['YandM'] = df2.agg(lambda x: f"{x['year']}_{x['month']}", axis=1)
 df2['YandM']
 YandM
 df2.YandM.value_counts()
-##YandM column does not exactly in order (exp.2016-03) therfore I used date format
+##YandM column does not exactly in order (exp.2016-03) therefore I used date format
 
 from matplotlib.dates import DateFormatter
 import matplotlib.dates as mdates
