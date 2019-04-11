@@ -56,8 +56,9 @@ df3['OFFENSES']
 
 ########how to extrat offense code?
 #####offense codes have several formats, here I explain my solution
+#######First solution is long and inaccurate
 ####1. First try to slice messy codes from the rest of string  
-df3['offense_code']=df3['OFFENSES'].apply(lambda x: x[:20])
+df3['offense_code']=df3['OFFENSES'].apply(lambda x: x[:10])
 type(df3['offense_code'])
 c=list(df3['offense_code'])
 len(c) #29366 values c is the list of messy codes
@@ -136,6 +137,12 @@ counter_2=collections.Counter(clean_code)
 print (counter_2)
 len(counter_2)#312
 
+#or more efficient
+clean_code=[]
+for x in ltt:
+  y=x.find(" ")
+  clean_code.append(x[0:y])
+len(clean_code)
 
 
 
